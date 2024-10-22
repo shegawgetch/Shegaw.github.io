@@ -18,6 +18,7 @@ import BuildIcon from '@mui/icons-material/Build';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import { motion } from 'framer-motion';
 import CloseIcon from '@mui/icons-material/Close';
+import sheguImage from '/assets/shegu.png'; // Adjust this if you're importing directly
 const About = () => {
     const [open, setOpen] = useState<any>(false);
 
@@ -37,7 +38,7 @@ const About = () => {
       <Box display="flex" alignItems="center" justifyContent="center" mb={4}>
       <Avatar
         alt="Profile Picture"
-        src="/assets/shegu.png" // Directly from public folder
+        src={sheguImage} // Directly from public folder
         sx={{
           width: 140, // Increased size for better visibility
           height: 140, // Increased size for better visibility
