@@ -39,7 +39,7 @@ const About = () => {
       <Box display="flex" alignItems="center" justifyContent="center" mb={4}>
       <Avatar
         alt="Profile Picture"
-        src={sheguImage} // Directly from public folder
+        src="assets/shegu.png" // Directly from public folder
         sx={{
           width: 140, // Increased size for better visibility
           height: 140, // Increased size for better visibility
@@ -83,7 +83,7 @@ const About = () => {
           </IconButton>
           <Box
             component="img"
-            src={sheguImage}// Same image from public folder
+            src="assets/shegu.png"// Same image from public folder
             alt="Full Profile"
             sx={{
               maxWidth: '100%', // Responsive width
