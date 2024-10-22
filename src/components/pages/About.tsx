@@ -24,6 +24,7 @@ const About = () => {
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const sheguImage = `${process.env.PUBLIC_URL}/assets/shegu.png`;
   return (
     <Container maxWidth="lg" style={{ marginTop: '20px', padding: '20px', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>
       <motion.div
@@ -38,7 +39,7 @@ const About = () => {
       <Box display="flex" alignItems="center" justifyContent="center" mb={4}>
       <Avatar
         alt="Profile Picture"
-        src={`${process.env.PUBLIC_URL}/assets/shegu.png`} // Directly from public folder
+        src={sheguImage} // Directly from public folder
         sx={{
           width: 140, // Increased size for better visibility
           height: 140, // Increased size for better visibility
@@ -82,7 +83,7 @@ const About = () => {
           </IconButton>
           <Box
             component="img"
-            src="/assets/shegu.png" // Same image from public folder
+            src={sheguImage}// Same image from public folder
             alt="Full Profile"
             sx={{
               maxWidth: '100%', // Responsive width
