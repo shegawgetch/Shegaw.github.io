@@ -1,16 +1,13 @@
-import { Outlet } from 'react-router-dom'
-import Head from '../layout/Head'
-
+import { Outlet } from 'react-router-dom';
+import Head from '../layout/Head';
+import Footer from '../layout/Footer';
 
 export const PrivateRout = () => {
-
-
-
-  return(
+  return (
     <div>
-              <Head/>   
-            <Outlet/>
-        </div>
-
-  )
-}
+      <Head />   
+      <Outlet />
+      <Footer />
+    </div>
+  );
+};
