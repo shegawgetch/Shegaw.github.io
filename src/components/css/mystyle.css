@@ -1,0 +1,16 @@
+.isActive {
+    color: yellow; /* Active link color */
+    text-decoration: none; /* Remove underline */
+  }
+  a{
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+  }
+  a:hover{
+    color: yellow ;
+  }
+  
