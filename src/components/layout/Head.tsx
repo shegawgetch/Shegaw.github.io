@@ -13,16 +13,19 @@ import '../css/mystyle.css'; // Import your CSS file here
 import { Tooltip } from '@mui/material';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import { ListItem } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faUser, faSuitcase, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 interface Props {
   window?: () => Window;
 }
 
 const drawerWidth = 240;
 const navItems = [
-  { link: 'Home', to: '/' },
-  { link: 'About', to: '/about' },
-  { link: 'Portfolio', to: '/portfolio' },
-  { link: 'Contact', to: '/contact' },
+  { link: 'Home', to: '/', icon: faHome },
+  { link: 'About', to: '/about', icon: faUser },
+  { link: 'Portfolio', to: '/portfolio', icon: faSuitcase },
+  { link: 'Contact', to: '/contact', icon: faEnvelope },
 ];
 
 const Head: React.FC<Props> = (props) => {
@@ -38,13 +41,51 @@ const Head: React.FC<Props> = (props) => {
       onClick={handleDrawerToggle}
       sx={{
         textAlign: 'center',
-        padding: 1, // Reduced padding for minimized height
+        padding: 1,
         backgroundColor: '#f9f9f9',
-        height: '100%', // Ensure full height
+        height: '100%',
       }}
     >
+      <Box display="flex" alignItems="center" justifyContent="center" mb={1}>
+        <Box
+          sx={{
+            position: 'relative',
+            width: '300px', // Adjusted width
+            height: '200px', // Adjusted height
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: '50%', // Circular shape
+            overflow: 'hidden',
+            border: '4px solid #3f51b5', // Border for visibility
+            boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)', // Shadow for depth
+            transition: 'transform 0.3s ease', // Transition for hover effect
+          }}
+        >
+          <img
+            src="assets/shegu.png" // Image path
+            alt="Profile"
+            style={{
+              width: '100%',
+              height: '100%',
+              borderRadius: '50%', // Circular image
+              objectFit: 'cover', // Maintain aspect ratio
+              transition: 'transform 0.3s ease', // Transition for image
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.1)'; // Scale on hover
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)'; // Reset scale
+            }}
+          />
+        </Box>
+        <Typography sx={{ marginLeft: 1, color: '#3f51b5' }}>
+          <strong>Full Stack Developer & Lecturer</strong>
+        </Typography>
+      </Box>
       <Tooltip title="Full Stack Developer - React + Nodejs">
-        <Typography variant="h6" sx={{ my: 0.5, color: '#333', fontWeight: 'bold' }}>
+        <Typography variant="h6" sx={{ my: 0, color: '#333', fontWeight: 'bold' }}>
           Shegaw Getie
         </Typography>
       </Tooltip>
@@ -61,24 +102,11 @@ const Head: React.FC<Props> = (props) => {
               },
             }}
           >
-            <NavLink
-              className={({ isActive }) => (isActive ? 'isActive' : 'inactive')}
+            <NavLink 
+              className={({ isActive }) => (isActive ? 'isActiveTogle' : 'togleNav')}
               to={link.to}
-              style={({ isActive }) => ({
-                textDecoration: 'none',
-                color: isActive ? '007BB8 ' : '#444',
-                padding: '5px 10px', // Smaller padding for compact links
-                display: 'block',
-                borderRadius: '3px', // Slightly smaller border radius
-                fontSize: '0.875rem', // Smaller font size
-                transition: 'background-color 0.3s, color 0.3s', // Smooth transition for background and color
-                backgroundColor: isActive ? '#e3f2fd' : 'transparent',
-                '&:hover': {
-                  backgroundColor: 'black', // Bright orange on hover
-                  color: '#ffffff', // White text on hover
-                },
-              })}
             >
+              <FontAwesomeIcon icon={link.icon} style={{ marginRight: '8px' }} />
               {link.link}
             </NavLink>
           </ListItem>
@@ -86,6 +114,7 @@ const Head: React.FC<Props> = (props) => {
       </List>
     </Box>
   );
+
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
@@ -103,42 +132,39 @@ const Head: React.FC<Props> = (props) => {
             <MenuIcon />
           </IconButton>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-  <Tooltip title="Full Stack Developer - React + Nodejs" placement="bottom">
-  <IconButton
-    sx={{
-      background: '#fff',
-      borderRadius: '50%',
-      padding: '8px', // Adjust padding for size
-      '&:hover': {
-        background: '#f0f0f0', // Optional: Change background on hover
-      },
-    }}
-  >
-    <InfoOutlinedIcon sx={{ color: '#000' }} /> {/* Adjust the icon color as needed */}
-  </IconButton>
-</Tooltip>
-
-    <Typography variant="h6" sx={{ display: { xs: 'none', sm: 'block' }, marginLeft: '8px' }}>
-      Shegaw Getie
-    </Typography>
-  </Box>
-
-  <Box sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: 'flex-end', alignItems: 'center' }}>
-    {navItems.map((link) => (
-      <NavLink 
-        key={link.to} // Make sure to add a key prop
-        className={({ isActive }) => (isActive ? 'isActive' : 'inactive')} 
-        to={link.to}
-        style={{ marginLeft: '16px' }} // Adjust spacing as needed
-      >
-        {link.link}
-      </NavLink>
-    ))}
-  </Box>
-</Box>
-
-
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Tooltip title="Full Stack Developer - React + Nodejs" placement="bottom">
+                <IconButton
+                  sx={{
+                    background: '#fff',
+                    borderRadius: '50%',
+                    padding: '8px',
+                    '&:hover': {
+                      background: '#f0f0f0',
+                    },
+                  }}
+                >
+                  <InfoOutlinedIcon sx={{ color: '#000' }} />
+                </IconButton>
+              </Tooltip>
+              <Typography variant="h6" sx={{ display: { xs: 'none', sm: 'block' }, marginLeft: '8px' }}>
+                Shegaw Getie
+              </Typography>
+            </Box>
+            <Box sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: 'flex-end', alignItems: 'center' }}>
+              {navItems.map((link) => (
+                <NavLink 
+                  key={link.to}
+                  className={({ isActive }) => ` ${isActive ? 'isActive' : 'nav'}`}
+                  to={link.to}
+                  style={{ marginLeft: '16px',borderRadius:'10px' }}
+                >
+                  <FontAwesomeIcon icon={link.icon} style={{ marginRight: '4px' }} />
+                  {link.link}
+                </NavLink>
+              ))}
+            </Box>
+          </Box>
         </Box>
       </AppBar>
       <nav>
@@ -148,7 +174,7 @@ const Head: React.FC<Props> = (props) => {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },

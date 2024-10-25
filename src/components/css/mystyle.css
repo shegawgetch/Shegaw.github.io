@@ -2,7 +2,7 @@
     color: yellow; /* Active link color */
     text-decoration: none; /* Remove underline */
   }
-  a{
+  .nav{
     font-size: 18px;
     color: white;
     padding: 10px;
@@ -10,7 +10,45 @@
     align-items: center;
     text-decoration: none;
   }
-  a:hover{
+  .nav:hover{
     color: yellow ;
   }
-  
+  .isActiveTogle {
+    color: yellow; /* Active link color */
+    text-decoration: none; /* Remove underline */
+    background-color: rgb(187, 173, 230); /* Match hover background color */
+    border-radius: 5px; /* Rounded corners for consistency */
+    font-weight: bold; /* Bold text for emphasis */
+    padding: 10px; /* Consistent padding */
+    text-align: center;
+    align-items: center;
+    display: block;
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.togleNav {
+    font-size: 18px;
+    color: #000080;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    background-color: #D3D3D3; /* Background color */
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    display: block; /* Ensure the links take full width */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.togleNav:hover {
+    background-color: rgb(187, 173, 230); /* Same as active */
+    color: yellow; /* Hover text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.togleNav:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Optional focus effect */
+}
