@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Shegaw.github.io/static/css/main.4c896f91.css",
-    "main.js": "/Shegaw.github.io/static/js/main.056409a5.js",
+    "main.js": "/Shegaw.github.io/static/js/main.b05eb994.js",
     "static/js/453.ed3810f9.chunk.js": "/Shegaw.github.io/static/js/453.ed3810f9.chunk.js",
     "index.html": "/Shegaw.github.io/index.html",
     "main.4c896f91.css.map": "/Shegaw.github.io/static/css/main.4c896f91.css.map",
-    "main.056409a5.js.map": "/Shegaw.github.io/static/js/main.056409a5.js.map",
+    "main.b05eb994.js.map": "/Shegaw.github.io/static/js/main.b05eb994.js.map",
     "453.ed3810f9.chunk.js.map": "/Shegaw.github.io/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4c896f91.css",
-    "static/js/main.056409a5.js"
+    "static/js/main.b05eb994.js"
   ]
 }
