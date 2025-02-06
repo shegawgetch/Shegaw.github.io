@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Shegaw.github.io/static/css/main.ac3ac623.css",
-    "main.js": "/Shegaw.github.io/static/js/main.3fdf04f8.js",
-    "static/js/453.ed3810f9.chunk.js": "/Shegaw.github.io/static/js/453.ed3810f9.chunk.js",
-    "index.html": "/Shegaw.github.io/index.html",
-    "main.ac3ac623.css.map": "/Shegaw.github.io/static/css/main.ac3ac623.css.map",
-    "main.3fdf04f8.js.map": "/Shegaw.github.io/static/js/main.3fdf04f8.js.map",
-    "453.ed3810f9.chunk.js.map": "/Shegaw.github.io/static/js/453.ed3810f9.chunk.js.map"
+    "main.css": "/static/css/main.ac3ac623.css",
+    "main.js": "/static/js/main.7d15c51c.js",
+    "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
+    "index.html": "/index.html",
+    "main.ac3ac623.css.map": "/static/css/main.ac3ac623.css.map",
+    "main.7d15c51c.js.map": "/static/js/main.7d15c51c.js.map",
+    "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ac3ac623.css",
-    "static/js/main.3fdf04f8.js"
+    "static/js/main.7d15c51c.js"
   ]
 }
